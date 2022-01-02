@@ -56,7 +56,7 @@ func main() {
 }
 
 func startDebugging() int {
-	cmd := exec.Command("dlv", "debug", "--headless", "--listen=:2345", "--api-version=2", "--accept-multiclient")
+	cmd := exec.Command("dlv", "debug", "--headless", "--listen=:2345", "--api-version=2", "--accept-multiclient", "--output=/tmp/__debug_bin")
 	cmd.SysProcAttr = &syscall.SysProcAttr{
 		Setpgid:   true,
 		Pdeathsig: syscall.SIGTERM,
