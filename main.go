@@ -24,7 +24,6 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
-	done := make(chan bool)
 	go func() {
 		for {
 			select {
@@ -51,8 +50,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	<-done
-
 }
 
 func startDebugging() int {
